@@ -34,7 +34,7 @@
 5) **Do the needful changes**
 
 
-- First Install packegs
+- First Install packages
   ```
     npm install
   ```
