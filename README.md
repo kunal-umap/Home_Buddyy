@@ -54,7 +54,11 @@
   git commit -m "<Clear and concise commit message>"
 ```
 
-7) 
+7) **Set the upstream.**
+
+```
+  git remote add upstream https://github.com/kunal-umap/Home_Buddyy.git
+```
 
 
 ## For Production
