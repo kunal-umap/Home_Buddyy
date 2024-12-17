@@ -10,6 +10,14 @@ createRoot(document.getElementById('root')!).render(
       token: {
 
       },
+      components: {
+        Button: {
+          
+        },
+        Radio: {
+          
+        }
+      }
     }} >
       <App />
     </ConfigProvider>
