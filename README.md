@@ -25,13 +25,26 @@
   cd ____________
   ```
 
-4) **Create a branch.**
+4) **Set the upstream.**
+
+```
+  git remote add upstream https://github.com/kunal-umap/Home_Buddyy.git
+```
+
+5) **Update your local main branch.**
+
+```
+  git pull upstream main
+```
+
+
+6) **Create a branch.**
 
 ```
   git checkout -b <branch-name>
 ```
 
-5) **Do the needful changes**
+7) **Do the needful changes**
 
 
 - First Install packages
@@ -47,18 +60,41 @@
 - Do needful changes
 
 
-6) **Add and commit the changes.**
+8) **Add and commit the changes.**
 
 ```
   git add .
   git commit -m "<Clear and concise commit message>"
 ```
 
-7) **Set the upstream.**
+9) **Fetch changes from upstream.**
 
 ```
-  git remote add upstream https://github.com/kunal-umap/Home_Buddyy.git
+  git fetch upstream
 ```
+
+10) **Merge upstream main into your feature branch.**
+
+```
+  # DO only if the current branch is not your feature branch to check do ( git branch )
+  git checkout <feature/your-feature-name>
+```
+```
+  git merge upstream/main
+```
+
+
+11) **Push your branch to your fork.**
+
+```
+  git push -u origin <your-branch-name>
+```
+
+
+
+12) **Go to your GitHub Frok.**
+13) **Click "Compare & pull request.**
+14) **Fill title and clear description & submit pull request.**
 
 
 ## For Production
