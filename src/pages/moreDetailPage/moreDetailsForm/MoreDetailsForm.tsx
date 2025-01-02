@@ -1,4 +1,5 @@
-import { PlusOutlined } from '@ant-design/icons';
+import stylef from "./MoreDetailsForm.module.css";
+import { PlusOutlined } from "@ant-design/icons";
 import {
   Button,
   Cascader,
@@ -7,6 +8,7 @@ import {
   Form,
   Input,
   InputNumber,
+  Layout,
   Radio,
   Rate,
   Select,
@@ -14,7 +16,7 @@ import {
   Switch,
   TreeSelect,
   Upload,
-} from 'antd';
+} from "antd";
 
 const { RangePicker } = DatePicker;
 const { TextArea } = Input;
@@ -26,120 +28,127 @@ const normFile = (e: any) => {
   return e?.fileList;
 };
 
-
 export default function MoreDetailsForm() {
-
   return (
-      <Form
-        layout="vertical"
+    <Form layout="vertical">
+      <Form.Item
+        label="Upload"
+        valuePropName="fileList"
+        getValueFromEvent={normFile}
       >
-        
-        <Form.Item label="Radio">
-          <Radio.Group>
-            <Radio value="apple"> Apple </Radio>
-            <Radio value="pear"> Pear </Radio>
-          </Radio.Group>
-        </Form.Item>
-        <Form.Item label="Input">
+        <Upload action="/upload.do" listType="picture-card">
+          <button style={{ border: 0, background: "none" }} type="button">
+            <PlusOutlined />
+            <div style={{ marginTop: 8 }}>Upload</div>
+          </button>
+        </Upload>
+      </Form.Item>
+      <Form.Item label="DatePicker">
+        <DatePicker />
+      </Form.Item>
+      <Form.Item label="Select Preference">
+        <Select placeholder="Select your preference">
+          <Select.Option value="Buyer">Buyer</Select.Option>
+          <Select.Option value="Seller">Seller</Select.Option>
+          <Select.Option value="Agent">Agent</Select.Option>
+          <Select.Option value="Don't know now">Don't know now</Select.Option>
+        </Select>
+      </Form.Item>
+      <Form.Item label="Gender">
+        <Select placeholder="Select your gender">
+          <Select.Option value="Male">Male</Select.Option>
+          <Select.Option value="Female">Female</Select.Option>
+          <Select.Option value="Others">Others</Select.Option>
+        </Select>
+      </Form.Item>
+      <Form className={stylef.location_form}>
+        <Form.Item label="Address Line">
           <Input />
         </Form.Item>
-        <Form.Item label="Select">
-          <Select>
-            <Select.Option value="demo">Demo</Select.Option>
-          </Select>
-        </Form.Item>
-        <Form.Item label="TreeSelect">
-          <TreeSelect
-            treeData={[
-              { title: 'Light', value: 'light', children: [{ title: 'Bamboo', value: 'bamboo' }] },
-            ]}
-          />
-        </Form.Item>
-        <Form.Item label="Cascader">
-          <Cascader
-            options={[
-              {
-                value: 'zhejiang',
-                label: 'Zhejiang',
-                children: [
-                  {
-                    value: 'hangzhou',
-                    label: 'Hangzhou',
-                  },
-                ],
-              },
-            ]}
-          />
-        </Form.Item>
-        <Form.Item label="DatePicker">
-          <DatePicker />
-        </Form.Item>
-        <Form.Item label="RangePicker">
-          <RangePicker />
-        </Form.Item>
-        <Form.Item label="InputNumber">
-          <InputNumber />
-        </Form.Item>
-        <Form.Item label="TextArea">
-          <TextArea rows={4} />
-        </Form.Item>
-        <Form.Item label="Switch" valuePropName="checked">
-          <Switch />
-        </Form.Item>
-        <Form.Item label="Upload" valuePropName="fileList" getValueFromEvent={normFile}>
-          <Upload action="/upload.do" listType="picture-card">
-            <button style={{ border: 0, background: 'none' }} type="button">
-              <PlusOutlined />
-              <div style={{ marginTop: 8 }}>Upload</div>
-            </button>
-          </Upload>
-        </Form.Item>
-        <Form.Item label="Button">
-          <Button>Button</Button>
-        </Form.Item>
-        <Form.Item label="Slider">
-          <Slider />
-        </Form.Item>
-        <Form.Item label="ColorPicker">
-          <ColorPicker />
-        </Form.Item>
-        <Form.Item label="Rate">
-          <Rate />
-        </Form.Item>
-
-        <div>
-          
-        </div>
+          <Form.Item className={stylef.location_input} label="Village/Taluka">
+            <Input placeholder="Enter your village name"/>
+          </Form.Item>
+          <Form.Item className={stylef.location_input} label="District">
+            <Input placeholder="Enter your District name"/>
+          </Form.Item>
+          <Form.Item className={stylef.location_input} label="State">
+            <Input placeholder="Enter your State name"/>
+          </Form.Item>
+          <Form.Item className={stylef.location_input} label="Pincode">
+            <Input placeholder="Enter the pincode"/>
+          </Form.Item>
       </Form>
+      <div >
+      <Form.Item >
+        <Button className={stylef.submit}>Submit</Button>
+      </Form.Item>
+      <Form.Item >
+        <Button >Do it later</Button>
+      </Form.Item>
+      </div>
+      <Form.Item label="Radio">
+        <Radio.Group>
+          <Radio value="apple"> Apple </Radio>
+          <Radio value="pear"> Pear </Radio>
+        </Radio.Group>
+      </Form.Item>
+      <Form.Item label="Input">
+        <Input />
+      </Form.Item>
+      <Form.Item label="TreeSelect">
+        <TreeSelect
+          treeData={[
+            {
+              title: "Light",
+              value: "light",
+              children: [{ title: "Bamboo", value: "bamboo" }],
+            },
+          ]}
+        />
+      </Form.Item>
+      <Form.Item label="Cascader">
+        <Cascader
+          options={[
+            {
+              value: "zhejiang",
+              label: "Zhejiang",
+              children: [
+                {
+                  value: "hangzhou",
+                  label: "Hangzhou",
+                },
+              ],
+            },
+          ]}
+        />
+      </Form.Item>
+      <Form.Item label="RangePicker">
+        <RangePicker />
+      </Form.Item>
+      <Form.Item label="InputNumber">
+        <InputNumber />
+      </Form.Item>
+      <Form.Item label="TextArea">
+        <TextArea rows={4} />
+      </Form.Item>
+      <Form.Item label="Switch" valuePropName="checked">
+        <Switch />
+      </Form.Item>
+      
+      <Form.Item label="Slider">
+        <Slider />
+      </Form.Item>
+      <Form.Item label="ColorPicker">
+        <ColorPicker />
+      </Form.Item>
+      <Form.Item label="Rate">
+        <Rate />
+      </Form.Item>
+
+      <div></div>
+    </Form>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import momentGenerateConfig from "rc-picker/es/generate/moment";
 // import { UserOutlined, SearchOutlined } from "@ant-design/icons";
@@ -176,7 +185,8 @@ export default function MoreDetailsForm() {
 //     label: "Female",
 //   },
 // ];
-{/* <br />
+{
+  /* <br />
       <Input placeholder="default size" prefix={<UserOutlined />} />
       <br />
       <br />
@@ -262,4 +272,5 @@ export default function MoreDetailsForm() {
         >
           Save
         </Button>
-      </div> */}
+      </div> */
+}
