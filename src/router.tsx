@@ -1,34 +1,38 @@
 import { createBrowserRouter, Outlet, RouteObject } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
-
+import MoreDetails from "./pages/moreDetailPage/MoreDetails";
 
 const routes: RouteObject[] = [
-    {
-        path: '/',
-        element: <HomePage />,
-    },
-    {
-        path: '/auth',
-        element: <div>About
-            <Outlet />
-        </div>,
-        children: [
-            {
-                path: 'login',
-                element: <div>1</div>
-            },
-            {
-                path: '2',
-                element: <div>2</div>
-            }
-        ]
-    }
-    
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/auth",
+    element: (
+      <div>
+        About
+        <Outlet />
+      </div>
+    ),
+    children: [
+      {
+        path: "login",
+        element: <div>1</div>,
+      },
+      {
+        path: "2",
+        element: <div>2</div>,
+      },
+    ],
+  },
+  {
+    path: "/info",
+    element: <MoreDetails />,
+  },
 ];
 
 export const router = createBrowserRouter(routes);
-
-
 
 /* 
 
