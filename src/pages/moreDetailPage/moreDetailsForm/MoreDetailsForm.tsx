@@ -31,19 +31,20 @@ const normFile = (e: any) => {
 export default function MoreDetailsForm() {
   return (
     <Form layout="vertical">
-      <Form.Item
-        label="Upload"
-        valuePropName="fileList"
-        getValueFromEvent={normFile}
-      >
-        <Upload action="/upload.do" listType="picture-card">
+      <Form.Item valuePropName="file" getValueFromEvent={normFile}>
+        <Upload
+          className={stylef.image_upload}
+          action="/upload.do"
+          listType="picture-card"
+          maxCount={1}
+        >
           <button style={{ border: 0, background: "none" }} type="button">
             <PlusOutlined />
             <div style={{ marginTop: 8 }}>Upload</div>
           </button>
         </Upload>
       </Form.Item>
-      <Form.Item label="DatePicker">
+      <Form.Item label="Date of Birth">
         <DatePicker />
       </Form.Item>
       <Form.Item label="Select Preference">
@@ -61,91 +62,35 @@ export default function MoreDetailsForm() {
           <Select.Option value="Others">Others</Select.Option>
         </Select>
       </Form.Item>
-      <Form className={stylef.location_form}>
+      <div className={stylef.location_form}>
+        <h3>Location Details</h3>
         <Form.Item label="Address Line">
           <Input />
         </Form.Item>
+        <div className={stylef.internal_location_form}>
           <Form.Item className={stylef.location_input} label="Village/Taluka">
-            <Input placeholder="Enter your village name"/>
+            <Input placeholder="Enter your village name" />
           </Form.Item>
           <Form.Item className={stylef.location_input} label="District">
-            <Input placeholder="Enter your District name"/>
+            <Input placeholder="Enter your District name" />
           </Form.Item>
           <Form.Item className={stylef.location_input} label="State">
-            <Input placeholder="Enter your State name"/>
+            <Input placeholder="Enter your State name" />
           </Form.Item>
           <Form.Item className={stylef.location_input} label="Pincode">
-            <Input placeholder="Enter the pincode"/>
+            <Input
+              placeholder="Enter the pincode"
+              inputMode="numeric"
+              type="number"
+              maxLength={6}
+            />
           </Form.Item>
-      </Form>
-      <div >
-      <Form.Item >
-        <Button className={stylef.submit}>Submit</Button>
-      </Form.Item>
-      <Form.Item >
-        <Button >Do it later</Button>
-      </Form.Item>
+        </div>
       </div>
-      <Form.Item label="Radio">
-        <Radio.Group>
-          <Radio value="apple"> Apple </Radio>
-          <Radio value="pear"> Pear </Radio>
-        </Radio.Group>
-      </Form.Item>
-      <Form.Item label="Input">
-        <Input />
-      </Form.Item>
-      <Form.Item label="TreeSelect">
-        <TreeSelect
-          treeData={[
-            {
-              title: "Light",
-              value: "light",
-              children: [{ title: "Bamboo", value: "bamboo" }],
-            },
-          ]}
-        />
-      </Form.Item>
-      <Form.Item label="Cascader">
-        <Cascader
-          options={[
-            {
-              value: "zhejiang",
-              label: "Zhejiang",
-              children: [
-                {
-                  value: "hangzhou",
-                  label: "Hangzhou",
-                },
-              ],
-            },
-          ]}
-        />
-      </Form.Item>
-      <Form.Item label="RangePicker">
-        <RangePicker />
-      </Form.Item>
-      <Form.Item label="InputNumber">
-        <InputNumber />
-      </Form.Item>
-      <Form.Item label="TextArea">
-        <TextArea rows={4} />
-      </Form.Item>
-      <Form.Item label="Switch" valuePropName="checked">
-        <Switch />
-      </Form.Item>
-      
-      <Form.Item label="Slider">
-        <Slider />
-      </Form.Item>
-      <Form.Item label="ColorPicker">
-        <ColorPicker />
-      </Form.Item>
-      <Form.Item label="Rate">
-        <Rate />
-      </Form.Item>
-
-      <div></div>
+        <div className={stylef.btns_container}>
+          <Button type="link">Do it later...</Button>
+          <Button type="primary">Submit</Button>
+        </div>
     </Form>
   );
 }
