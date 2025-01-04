@@ -44,7 +44,7 @@ export default function MoreDetailsForm() {
           </button>
         </Upload>
       </Form.Item>
-      <Form.Item label="Date of Birth">
+      <Form.Item className={stylef.dob} label="Date of Birth">
         <DatePicker />
       </Form.Item>
       <Form.Item label="Select Preference">
@@ -65,7 +65,7 @@ export default function MoreDetailsForm() {
       <div className={stylef.location_form}>
         <h3>Location Details</h3>
         <Form.Item label="Address Line">
-          <Input />
+          <Input placeholder="Enter your address details"/>
         </Form.Item>
         <div className={stylef.internal_location_form}>
           <Form.Item className={stylef.location_input} label="Village/Taluka">
@@ -88,8 +88,8 @@ export default function MoreDetailsForm() {
         </div>
       </div>
         <div className={stylef.btns_container}>
-          <Button type="link">Do it later...</Button>
-          <Button type="primary">Submit</Button>
+          <Button className={stylef.btns1} type="link" >Do it later...</Button>
+          <Button className={stylef.btns2} type="primary">Submit</Button>
         </div>
     </Form>
   );
