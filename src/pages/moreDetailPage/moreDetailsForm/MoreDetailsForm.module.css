@@ -1,12 +1,25 @@
+.upload_component {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 8px;
+}
+
 .image_upload button {
-    color: rgb(0, 0, 0);
     
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(0, 0, 0);
+    /* background-color: #ffffff; */
+}
+
+.dob {
+    display: flex;
 }
 
 .location_form {
     position: relative;
     padding: 8px;
-    background: #ffffff;
+    /* background: #ffffff; */
     border-radius: 8px;
     border-color: rgb(0, 0, 0);
     border: 1px solid black;
