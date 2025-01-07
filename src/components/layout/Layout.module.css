@@ -6,8 +6,6 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #e3e2df; /* Background color */
 }
-
-/* Universal Box-Sizing */
 * {
   box-sizing: border-box;
 }
@@ -41,7 +39,6 @@ body {
   margin: 10px 0;
 }
 
-/* Image Section (Right Half for Login Form) */
 .image-section {
   flex: 1;
   display: flex;
