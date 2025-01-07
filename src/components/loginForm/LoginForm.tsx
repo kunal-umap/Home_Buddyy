@@ -2,6 +2,7 @@ import React from "react";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import styles from "./LoginForm.module.css";
+import { Link } from "react-router-dom";
 
 const LoginForm: React.FC = () => {
   const onFinish = (values: any) => {
@@ -48,7 +49,8 @@ const LoginForm: React.FC = () => {
         </Form.Item>
       </Form>
       <div className={styles.registerLink}>
-        Don't have an account? <a href="/signup">Register now!</a>
+        Don't have an account?{" "}
+        <Link to="/loginSignup/signup">Register now!</Link>
       </div>
     </div>
   );
