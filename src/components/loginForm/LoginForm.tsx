@@ -10,7 +10,6 @@ const LoginForm: React.FC = () => {
 
   return (
     <div className={styles.formContainer}>
-      <h2 className={styles.formTitle}>Login</h2>
       <Form name="login" initialValues={{ remember: true }} onFinish={onFinish}>
         <Form.Item
           name="username"
