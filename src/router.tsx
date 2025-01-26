@@ -1,11 +1,16 @@
 import { createBrowserRouter, Outlet, RouteObject } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
 import MoreDetails from "./pages/moreDetailPage/MoreDetails";
+import Navbar from "./components/navbar/Layout";
 
 const routes: RouteObject[] = [
   {
     path: "/",
     element: <HomePage />,
+  },
+  {
+    path: "/navbar",
+    element: <Navbar />,
   },
   {
     path: "/auth",
