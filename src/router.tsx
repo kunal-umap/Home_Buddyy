@@ -1,7 +1,7 @@
 import { createBrowserRouter, Outlet, RouteObject } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
 import MoreDetails from "./pages/moreDetailPage/MoreDetails";
-import Navbar from "./components/navbar/Layout";
+import Navbar from "./components/layout/Layout";
 
 const routes: RouteObject[] = [
   {
