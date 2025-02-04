@@ -1,6 +1,12 @@
-import { createBrowserRouter, Outlet, RouteObject } from "react-router-dom";
+import { createBrowserRouter, RouteObject } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
+
 import MoreDetails from "./pages/moreDetailPage/MoreDetails";
+
+import Layout from "./components/layout/Layout";
+import SignupPage from "./pages/loginSignup/SignupPage";
+import LoginPage from "./pages/loginSignup/LoginPage";
+
 
 const routes: RouteObject[] = [
   {
@@ -8,23 +14,19 @@ const routes: RouteObject[] = [
     element: <HomePage />,
   },
   {
-    path: "/auth",
-    element: (
-      <div>
-        About
-        <Outlet />
-      </div>
-    ),
+    path: "/auth", // Parent route
+    element: <Layout>{null}</Layout>, // Wraps child routes with the Layout component
     children: [
       {
-        path: "login",
-        element: <div>1</div>,
+        path: "login", // Renders LoginPage at "/loginSignup/login"
+        element: <LoginPage />,
       },
       {
-        path: "2",
-        element: <div>2</div>,
+        path: "signup", // Renders SignupPage at "/loginSignup/signup"
+        element: <SignupPage />,
       },
     ],
+    
   },
   {
     path: "/info",
@@ -34,19 +36,8 @@ const routes: RouteObject[] = [
 
 export const router = createBrowserRouter(routes);
 
-/* 
-
-    Folder (LoginSignupPage.tsx & css -> pages) -> layout1 -> outlet tag
-    components -> loginForm -> LoginFrom.tsx, LoginFrom.module.css 
-    components -> signupForm -> SignupFrom.tsx, SignupFrom.module.css
-
-    Pages -> Folder - MoreDetailsPage[ 
-    
-    -> MoreDetailsPage.tsx, MoreDetailsPage.module.css,
-    ->  MoreDetailsForm -> [MoreDetailsForm.tsx, MoreDetailsForm.module.css]
-    ]
 
 
-    Font sizes, 3,4 Colours , Spacing 
 
-*/
+
+
