@@ -1,0 +1,55 @@
+.upload_component {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 8px;
+}
+
+.image_upload button {
+    
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(0, 0, 0);
+    /* background-color: #ffffff; */
+}
+
+.dob {
+    display: flex;
+}
+
+.location_form {
+    position: relative;
+    padding: 8px;
+    /* background: #ffffff; */
+    border-radius: 8px;
+    border-color: rgb(0, 0, 0);
+    border: 1px solid black;
+
+}
+
+.location_input {
+    width: 45%;
+}
+
+.internal_location_form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.btns_container {
+    padding: 8px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+
+.btns1 {
+    color: #5D001E;
+}
+
+.btns2 {
+    background-color: #E3AFBC;
+    color: #5D001E;
+}

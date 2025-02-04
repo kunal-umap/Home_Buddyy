@@ -1,8 +1,12 @@
 import { createBrowserRouter, RouteObject } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
+
+import MoreDetails from "./pages/moreDetailPage/MoreDetails";
+
 import Layout from "./components/layout/Layout";
 import SignupPage from "./pages/loginSignup/SignupPage";
 import LoginPage from "./pages/loginSignup/LoginPage";
+
 
 const routes: RouteObject[] = [
   {
@@ -10,7 +14,7 @@ const routes: RouteObject[] = [
     element: <HomePage />,
   },
   {
-    path: "/loginSignup", // Parent route
+    path: "/auth", // Parent route
     element: <Layout>{null}</Layout>, // Wraps child routes with the Layout component
     children: [
       {
@@ -22,7 +26,18 @@ const routes: RouteObject[] = [
         element: <SignupPage />,
       },
     ],
+    
+  },
+  {
+    path: "/info",
+    element: <MoreDetails />,
   },
 ];
 
 export const router = createBrowserRouter(routes);
+
+
+
+
+
+
