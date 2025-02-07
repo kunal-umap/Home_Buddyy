@@ -2,24 +2,17 @@ import stylef from "./MoreDetailsForm.module.css";
 import { PlusOutlined } from "@ant-design/icons";
 import {
   Button,
-  Cascader,
-  ColorPicker,
   DatePicker,
   Form,
   Input,
-  InputNumber,
-  Layout,
-  Radio,
-  Rate,
   Select,
-  Slider,
-  Switch,
-  TreeSelect,
   Upload,
 } from "antd";
+import { Dayjs } from "dayjs";
+import { useState } from "react";
 
-const { RangePicker } = DatePicker;
-const { TextArea } = Input;
+
+
 
 const normFile = (e: any) => {
   if (Array.isArray(e)) {
@@ -29,10 +22,23 @@ const normFile = (e: any) => {
 };
 
 export default function MoreDetailsForm() {
+
+  const [image, setImage] = useState<any>();
+  const [dob, setDOB] = useState<Dayjs|number>();
+  const [preference, setPreference] = useState();
+  const [gender, setGender] = useState<string>("");
+  const [address, setAddress] = useState<string>("");
+  const [village, setVillage] = useState<string>("");
+  const [district, setDistrict] = useState<string>("");
+  const [state, setState] = useState<string>("");
+  const [pincode, setPincode] = useState<string>("");
+ 
+
   return (
     <Form layout="vertical">
-      <Form.Item valuePropName="file" getValueFromEvent={normFile}>
+      <Form.Item className={stylef.upload_component} valuePropName="file" getValueFromEvent={normFile}>
         <Upload
+          onChange={ (e) => setImage(e.file) }
           className={stylef.image_upload}
           action="/upload.do"
           listType="picture-card"
@@ -44,11 +50,11 @@ export default function MoreDetailsForm() {
           </button>
         </Upload>
       </Form.Item>
-      <Form.Item className={stylef.dob} label="Date of Birth">
-        <DatePicker />
+      <Form.Item label="Date of Birth">
+        <DatePicker onChange={(e) => console.log(e.date.toString()) } className={stylef.dob} />
       </Form.Item>
       <Form.Item label="Select Preference">
-        <Select placeholder="Select your preference">
+        <Select placeholder="Select your preference" onChange={(e) => setPreference(e)} >
           <Select.Option value="Buyer">Buyer</Select.Option>
           <Select.Option value="Seller">Seller</Select.Option>
           <Select.Option value="Agent">Agent</Select.Option>
@@ -56,7 +62,7 @@ export default function MoreDetailsForm() {
         </Select>
       </Form.Item>
       <Form.Item label="Gender">
-        <Select placeholder="Select your gender">
+        <Select onChange={ (e) => setGender(e)}  placeholder="Select your gender">
           <Select.Option value="Male">Male</Select.Option>
           <Select.Option value="Female">Female</Select.Option>
           <Select.Option value="Others">Others</Select.Option>
@@ -65,17 +71,17 @@ export default function MoreDetailsForm() {
       <div className={stylef.location_form}>
         <h3>Location Details</h3>
         <Form.Item label="Address Line">
-          <Input placeholder="Enter your address details"/>
+          <Input placeholder="Enter your address details" onChange={(e) => setAddress(e.target.value)} required= {true}/>
         </Form.Item>
         <div className={stylef.internal_location_form}>
           <Form.Item className={stylef.location_input} label="Village/Taluka">
-            <Input placeholder="Enter your village name" />
+            <Input required= {true} placeholder="Enter your village name" onChange={(e) => setVillage(e.target.value)}/>
           </Form.Item>
           <Form.Item className={stylef.location_input} label="District">
-            <Input placeholder="Enter your District name" />
+            <Input placeholder="Enter your District name" onChange={(e) => setDistrict(e.target.value)}/>
           </Form.Item>
           <Form.Item className={stylef.location_input} label="State">
-            <Input placeholder="Enter your State name" />
+            <Input placeholder="Enter your State name" onChange={(e) => setState(e.target.value)}/>
           </Form.Item>
           <Form.Item className={stylef.location_input} label="Pincode">
             <Input
@@ -83,6 +89,7 @@ export default function MoreDetailsForm() {
               inputMode="numeric"
               type="number"
               maxLength={6}
+              onChange={(e) => setPincode(e.target.value)}
             />
           </Form.Item>
         </div>
