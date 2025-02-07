@@ -2,6 +2,7 @@ import { createBrowserRouter, RouteObject } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
 
 import MoreDetails from "./pages/moreDetailPage/MoreDetails";
+import Navbar from "./components/layout/Layout";
 
 import Layout from "./components/layout/Layout";
 import SignupPage from "./pages/loginSignup/SignupPage";
@@ -13,6 +14,7 @@ const routes: RouteObject[] = [
     path: "/",
     element: <HomePage />,
   },
+
   {
     path: "/auth", // Parent route
     element: <Layout>{null}</Layout>, // Wraps child routes with the Layout component
