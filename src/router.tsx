@@ -11,19 +11,24 @@ import LoginSignup from "./pages/loginSignup/LoginSignup";
 const routes: RouteObject[] = [
   {
     path: "/",
-    element: <HomePage />,
-  },
-
-  {
-    path: "/auth", // Parent route
-    element: <LoginSignup/>, // Wraps child routes with the Layout component
+    element: <Layout />,
     children: [
       {
-        path: "login", // Renders LoginPage at "/loginSignup/login"
+        path: "/",
+        element: <HomePage />,
+      }
+    ]
+  },
+  {
+    path: "/auth",
+    element: <LoginSignup/>, 
+    children: [
+      {
+        path: "login",
         element: <LoginPage />,
       },
       {
-        path: "signup", // Renders SignupPage at "/loginSignup/signup"
+        path: "signup",
         element: <SignupPage />,
       },
     ],

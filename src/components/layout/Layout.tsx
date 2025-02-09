@@ -21,7 +21,7 @@ export default function Layout1() {
     <Layout  className={style.layout} >
         <Sider trigger={null} collapsible collapsed={collapsed} className={style.sider}>
           <div className="logo" />
-          <Menu mode="inline" defaultSelectedKeys={['1']}>
+          <Menu mode="inline" defaultSelectedKeys={['1']} className={style.menu}>
             <Menu.Item key="1" className={style.profile} icon={<UserOutlined />}>
               <span>Profile</span>
             </Menu.Item>
