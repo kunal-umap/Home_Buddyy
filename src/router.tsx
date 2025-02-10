@@ -32,18 +32,7 @@ const routes: RouteObject[] = [
         element: <SignupPage />,
       },
     ],
-    
-  },
-  {
-    path: "/info",
-    element: <MoreDetails />,
   },
 ];
 
 export const router = createBrowserRouter(routes);
-
-
-
-
-
-

@@ -1,0 +1,26 @@
+.homePage {
+  background-color: #E3E2DF;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: Robota, sans-serif;
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #5D001E;
+  font-family: Robota, sans-serif;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+ 
+/* .propertySection {
+  padding: 20px;
+} */
+  
