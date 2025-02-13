@@ -5,8 +5,9 @@ import Layout from "./components/layout/Layout";
 import LoginPage from "./components/login/LoginPage";
 import SignupPage from "./components/signup/SignupPage";
 import LoginSignup from "./pages/loginSignup/LoginSignup";
-
-
+import SellerPage from "./pages/sellerPage/SellerPage";
+import PropertyPage from "./pages/propertyPage/PropertyPage";
+import BuyPage from "./pages/buyPage/BuyPage";
 
 const routes: RouteObject[] = [
   {
@@ -16,12 +17,24 @@ const routes: RouteObject[] = [
       {
         path: "/",
         element: <HomePage />,
-      }
-    ]
+      },
+      {
+        path: "/sellerPage",
+        element: <SellerPage />,
+      },
+      {
+        path: "/propertyPage",
+        element: <PropertyPage />,
+      },
+      {
+        path: "/buyPage",
+        element: <BuyPage />,
+      },
+    ],
   },
   {
     path: "/auth",
-    element: <LoginSignup/>, 
+    element: <LoginSignup />,
     children: [
       {
         path: "login",
@@ -32,7 +45,6 @@ const routes: RouteObject[] = [
         element: <SignupPage />,
       },
     ],
-    
   },
   {
     path: "/info",
@@ -41,9 +53,3 @@ const routes: RouteObject[] = [
 ];
 
 export const router = createBrowserRouter(routes);
-
-
-
-
-
-
