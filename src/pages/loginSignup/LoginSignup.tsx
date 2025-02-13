@@ -1,10 +1,8 @@
-
 import React from "react";
 import styles from "./LoginSignup.module.css";
 import { Outlet } from "react-router-dom";
-import { LayoutProps } from "antd";
 
-const LoginSignup: React.FC<LayoutProps> = ({}) => {
+const LoginSignup: React.FC = ({}) => {
   return (
     <>
       <div className={styles["layout-container"]}>

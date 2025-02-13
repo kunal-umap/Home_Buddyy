@@ -1,0 +1,106 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #1890ff;
+  /* Ant Design primary color */
+}
+
+.subHeading {
+  font-size: 22px;
+  font-weight: 600;
+  color: #096dd9;
+  margin-top: 20px;
+  border-bottom: 2px solid #1890ff;
+  padding-bottom: 5px;
+}
+
+.formItem {
+  margin-bottom: 16px;
+}
+
+.inputField {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.textArea {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 15px;
+}
+
+.uploadContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.uploadButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border: 2px dashed #1890ff;
+  border-radius: 6px;
+  background: #f0f5ff;
+  color: #1890ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.uploadButton:hover {
+  background: #e6f7ff;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.primaryButton {
+  background-color: #1890ff;
+  color: #fff;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primaryButton:hover {
+  background-color: #096dd9;
+}
+
+.resetButton {
+  background-color: #f5222d;
+  color: #fff;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.resetButton:hover {
+  background-color: #cf1322;
+}
